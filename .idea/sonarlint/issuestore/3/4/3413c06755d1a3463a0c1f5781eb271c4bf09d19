@@ -1,0 +1,18 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(ßƒÌÿÿÿÿÿ8§¨ï˜İ1
+L
+java:S3740"/Provide the parametrized type for this generic.(”ë˜Ò8¨¨ï˜İ1
+L
+java:S3740#"/Provide the parametrized type for this generic.(ì›©ö8¨¨ï˜İ1
+Q
+java:S3740."/Provide the parametrized type for this generic.(™÷Íöşÿÿÿÿ8¨¨ï˜İ1
+
+java:S1319"dThe type of "list" should be an interface such as "List" rather than the implementation "ArrayList".(”ë˜Ò8©¨ï˜İ1
+
+java:S1319#"dThe type of "list" should be an interface such as "List" rather than the implementation "ArrayList".(ì›©ö8©¨ï˜İ1
+†
+java:S1319."dThe type of "list" should be an interface such as "List" rather than the implementation "ArrayList".(™÷Íöşÿÿÿÿ8©¨ï˜İ1
+G	java:S106"+Replace this use of System.out by a logger.(Ì¯§8Ç¨ï˜İ1
+L	java:S106"+Replace this use of System.out by a logger.(’Ğ¼éùÿÿÿÿ8É¨ï˜İ1
+L	java:S106"+Replace this use of System.out by a logger.(é¦­ºùÿÿÿÿ8Ê¨ï˜İ1
