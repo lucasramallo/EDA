@@ -1,7 +1,7 @@
 package org.example.Sorting;
 import java.util.List;
 
-public class QuickSort {
+public class QuickSort2 {
     public static int[] quickSort(int[] array, int begin, int end) {
         if(begin < end) {
             int q = partition(array, begin, end);
@@ -12,7 +12,7 @@ public class QuickSort {
     }
 
     public static int partition(int[] array, int begin, int end) {
-        int pivo = array[end];
+        int pivo = array[begin];
         int i = begin - 1;
         for(int j = begin; j <= end - 1; j++) {
             if(array[j] <= pivo) {
@@ -23,11 +23,11 @@ public class QuickSort {
             }
         }
 
-        int aux = array[i + 1];
-        array[i + 1] = array[end];
-        array[end] = aux;
+        int aux = array[i];
+        array[i ] = array[begin];
+        array[begin] = aux;
 
-        return i + 1;
+        return i;
     }
 
     public static void main(String[] args) {
