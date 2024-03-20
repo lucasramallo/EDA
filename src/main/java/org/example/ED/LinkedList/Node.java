@@ -1,27 +1,35 @@
 package org.example.ED.LinkedList;
 
 public class Node {
-    private Object object;
-    private Object next;
+    private int value;
+    private Node next;
 
-    public Node(Object object, Object next) {
-        this.object = object;
+    public Node(int object, Node next) {
+        this.value = object;
         this.next = next;
     }
 
-    public Object getObject() {
-        return object;
+    public int getValue() {
+        return value;
     }
 
-    public void setObject(Object object) {
-        this.object = object;
+    public void setValue(int value) {
+        this.value = value;
     }
 
-    public Object getNext() {
+    public Node getNext() {
         return next;
     }
 
-    public void setNext(Object next) {
+    public void setNext(Node next) {
         this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "value=" + value +
+                ", next=" + next +
+                '}';
     }
 }
