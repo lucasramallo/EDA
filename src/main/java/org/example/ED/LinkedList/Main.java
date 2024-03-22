@@ -1,17 +1,17 @@
 package org.example.ED.LinkedList;
 
+import org.example.ED.LinkedList.SimpleLinkedList.SimpleLinkedList;
+
 public class Main {
     public static void main(String[] args) {
-        SimpleLinkedList linkedList = new SimpleLinkedList();
-//        linkedList.add(1);
-//        linkedList.add(2);
-//        linkedList.add(3);
-//        linkedList.add(4);
-        linkedList.add(0, 5);
-        linkedList.add(1, 6);
+        SimpleLinkedList SimpleLinkedList = new SimpleLinkedList();
+        SimpleLinkedList.add(1);
+        SimpleLinkedList.add(2);
+        SimpleLinkedList.add(3);
+        SimpleLinkedList.add(4);
+        SimpleLinkedList.add(0, 5);
+        SimpleLinkedList.remove(3);
 
-        System.out.println(linkedList.getHead());
-        System.out.println("Head: " + linkedList.getHead());
-//        System.out.println(linkedList.get(2));
+        System.out.println(SimpleLinkedList.getNode(0));
     }
 }

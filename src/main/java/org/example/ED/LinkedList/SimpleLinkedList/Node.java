@@ -1,4 +1,4 @@
-package org.example.ED.LinkedList;
+package org.example.ED.LinkedList.SimpleLinkedList;
 
 public class Node {
     private int value;
