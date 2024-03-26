@@ -4,9 +4,9 @@ public class Node {
     private int value;
     private Node next;
 
-    public Node(int object, Node next) {
+    public Node(int object) {
         this.value = object;
-        this.next = next;
+        this.next = null;
     }
 
     public int getValue() {

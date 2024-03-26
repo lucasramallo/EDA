@@ -1,4 +1,4 @@
-package org.example.ED.LinkedList.LinkedList;
+package org.example.ED.LinkedList.DoublyLinkedList;
 
 public class DoublyLinkedList {
     private Node head;
@@ -27,6 +27,7 @@ public class DoublyLinkedList {
             if(oldNode == null) {
                 previousNode.setNext(node);
                 node.setPrevious(previousNode);
+                this.tail = node;
                 this.size++;
 
                 return true;
@@ -49,6 +50,7 @@ public class DoublyLinkedList {
             this.head = node;
         } else {
             this.tail.setNext(node);
+            node.setPrevious(this.tail);
         }
         this.tail = node;
         this.size++;
@@ -58,6 +60,7 @@ public class DoublyLinkedList {
         if(index == 0) {
             Node nextNode = getNode(1);
             this.head.setNext(null);
+            nextNode.setPrevious(null);
             this.head = nextNode;
 
             this.size--;
@@ -66,15 +69,19 @@ public class DoublyLinkedList {
 
         Node previousNode = getNode(index - 1);
         Node nodeToRemove = getNode(index);
+        Node nextNode = getNode(index + 1);
 
-        previousNode.setNext(nodeToRemove.getNext());
+        previousNode.setNext(nextNode);
+        nextNode.setPrevious(previousNode);
+
         nodeToRemove.setNext(null);
+        nodeToRemove.setPrevious(null);
 
         size--;
         return true;
     }
 
-    public Node getNode(int index) { // dando stackoverflow
+    public Node getNode(int index) {
         Node node = this.head;
         for(int i = 0; i < index; i++) {
             if (node.getNext() == null) {
@@ -111,7 +118,7 @@ public class DoublyLinkedList {
         this.size = size;
     }
 
-    private int size() {
+    public int size() {
         return this.size;
     }
 }

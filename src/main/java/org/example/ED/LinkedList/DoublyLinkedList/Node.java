@@ -1,4 +1,4 @@
-package org.example.ED.LinkedList.LinkedList;
+package org.example.ED.LinkedList.DoublyLinkedList;
 
 public class Node {
     private int value;
@@ -36,10 +36,10 @@ public class Node {
 
     @Override
     public String toString() {
-        String nextNodeStr = (this.next != null) ? "Next value: " + this.next.getValue() : null;
-        String previousNodeStr = (this.previous != null) ? "previous: " + this.previous.getValue() : null;
+        String nextNodeStr = (this.next != null) ? "Next value: " + this.next.getValue() : "Next value: " + null;
+        String previousNodeStr = (this.previous != null) ? "previous: " + this.previous.getValue() : "previous: " + null;
         return "Node{" +
-                "value=" + value +
+                "value = " + value +
                 ", " + previousNodeStr +
                 ", " + nextNodeStr +
                 '}';

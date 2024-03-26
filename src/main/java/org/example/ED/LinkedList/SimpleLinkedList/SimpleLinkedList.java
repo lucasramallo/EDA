@@ -12,7 +12,7 @@ public class SimpleLinkedList {
 
     public boolean add(int index, int value) {
         if(index <= this.size && index >= 0) {
-            Node node = new Node(value, null);
+            Node node = new Node(value);
             if(index == 0) {
                 node.setNext(head);
                 this.head = node;
@@ -33,7 +33,7 @@ public class SimpleLinkedList {
     }
 
     public void add(int value) {
-        Node node = new Node(value, null);
+        Node node = new Node(value);
         if(this.size == 0) {
             this.head = node;
         } else {
