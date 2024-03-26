@@ -1,4 +1,4 @@
-# Repositório de Estudo: EDA e Estrutura de Dados e Algoritmos
+# Repositório de Estudo: Estrutura de Dados e Algoritmos
 
 Este repositório contém materiais para estudo e prática de Exploratory Data Analysis (EDA) e Estrutura de Dados e Algoritmos.
 
