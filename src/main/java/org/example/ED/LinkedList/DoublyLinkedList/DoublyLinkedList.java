@@ -13,12 +13,25 @@ public class DoublyLinkedList {
     public boolean add(int index, int value) {
         if(index <= this.size && index >= 0) {
             Node node = new Node(value, null);
+
+            if(index == 0 && this.size > 0) {
+                node.setNext(this.head);
+                this.head.setPrevious(node);
+                this.head.setNext(node);
+                this.head = node;
+
+                this.size++;
+
+                return true;
+            }
+
             if(index == 0) {
                 node.setNext(head);
                 node.setPrevious(null);
                 this.head = node;
                 this.tail = node;
                 this.size++;
+
                 return true;
             }
 
