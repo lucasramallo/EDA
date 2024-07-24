@@ -1,4 +1,4 @@
-package org.example.HashTable;
+package org.example.HashTable.hashTableLinkedList;
 
 public class Aluno {
     private int matricula;

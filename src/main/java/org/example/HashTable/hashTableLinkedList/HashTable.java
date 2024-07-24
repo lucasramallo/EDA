@@ -1,10 +1,7 @@
-package org.example.HashTable;
+package org.example.HashTable.hashTableLinkedList;
 
 
-import org.example.HashTable.SimpleLinkedList.SimpleLinkedList;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+import org.example.HashTable.hashTableLinkedList.SimpleLinkedList.SimpleLinkedList;
 
 public class HashTable {
     private final int sizeLimit;

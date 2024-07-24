@@ -1,6 +1,6 @@
-package org.example.HashTable.SimpleLinkedList;
+package org.example.HashTable.hashTableLinkedList.SimpleLinkedList;
 
-import org.example.HashTable.Aluno;
+import org.example.HashTable.hashTableLinkedList.Aluno;
 
 public class Node {
     private Aluno value;

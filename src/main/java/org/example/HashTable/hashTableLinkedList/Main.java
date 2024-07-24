@@ -1,4 +1,4 @@
-package org.example.HashTable;
+package org.example.HashTable.hashTableLinkedList;
 
 public class Main {
     public static void main(String[] args) {
