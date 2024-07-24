@@ -1,18 +1,18 @@
-package org.example.ED.LinkedList.DoublyLinkedList;
+package org.example.LinkedList.CircularDoublyLinkedList;
 
-public class DoublyLinkedList {
+public class CircularDoublyLinkedList {
     private Node head;
     private Node tail;
     private int size;
 
-    public DoublyLinkedList() {
+    public CircularDoublyLinkedList() {
         this.head = null;
         this.tail = null;
     }
 
     public boolean add(int index, int value) {
         if(index <= this.size && index >= 0) {
-            Node node = new Node(value, null);
+            Node node = new Node(value);
 
             if(index == 0 && this.size > 0) {
                 node.setNext(this.head);
@@ -21,6 +21,7 @@ public class DoublyLinkedList {
                 this.head = node;
 
                 this.size++;
+                linkingTailAndHead();
 
                 return true;
             }
@@ -31,6 +32,7 @@ public class DoublyLinkedList {
                 this.head = node;
                 this.tail = node;
                 this.size++;
+                linkingTailAndHead();
 
                 return true;
             }
@@ -42,6 +44,7 @@ public class DoublyLinkedList {
                 previousNode.setNext(node);
                 node.setPrevious(previousNode);
                 this.tail = node;
+                linkingTailAndHead();
                 this.size++;
 
                 return true;
@@ -52,14 +55,16 @@ public class DoublyLinkedList {
             node.setPrevious(previousNode);
             oldNode.setPrevious(node);
 
+            linkingTailAndHead();
             this.size++;
+
             return true;
         }
         return false;
     }
 
     public void add(int value) {
-        Node node = new Node(value, null);
+        Node node = new Node(value);
         if(this.size == 0) {
             this.head = node;
         } else {
@@ -67,6 +72,7 @@ public class DoublyLinkedList {
             node.setPrevious(this.tail);
         }
         this.tail = node;
+        linkingTailAndHead();
         this.size++;
     }
 
@@ -77,6 +83,7 @@ public class DoublyLinkedList {
             nextNode.setPrevious(null);
             this.head = nextNode;
 
+            linkingTailAndHead();
             this.size--;
             return true;
         }
@@ -91,14 +98,20 @@ public class DoublyLinkedList {
         nodeToRemove.setNext(null);
         nodeToRemove.setPrevious(null);
 
+        linkingTailAndHead();
         size--;
         return true;
+    }
+
+    private void linkingTailAndHead() {
+        this.tail.setNext(this.head);
+        this.head.setPrevious(this.tail);
     }
 
     public Node getNode(int index) {
         Node node = this.head;
         for(int i = 0; i < index; i++) {
-            if (node.getNext() == null) {
+            if (node.getNext() == null || node.getNext() == this.head) {
                 return null;
             }
             node = node.getNext();

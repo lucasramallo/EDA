@@ -1,36 +1,36 @@
-package org.example.ED.LinkedList.CircularSimpleLinkedList;
+package org.example.LinkedList.DoublyLinkedList;
 
-public class CircularSimpleLinkedList {
+public class DoublyLinkedList {
     private Node head;
     private Node tail;
     private int size;
 
-    public CircularSimpleLinkedList() {
+    public DoublyLinkedList() {
         this.head = null;
         this.tail = null;
     }
 
     public boolean add(int index, int value) {
         if(index <= this.size && index >= 0) {
-            Node node = new Node(value);
+            Node node = new Node(value, null);
 
             if(index == 0 && this.size > 0) {
                 node.setNext(this.head);
+                this.head.setPrevious(node);
                 this.head.setNext(node);
                 this.head = node;
 
                 this.size++;
-                linkingTailToHead();
 
                 return true;
             }
 
             if(index == 0) {
                 node.setNext(head);
+                node.setPrevious(null);
                 this.head = node;
                 this.tail = node;
                 this.size++;
-                linkingTailToHead();
 
                 return true;
             }
@@ -40,8 +40,8 @@ public class CircularSimpleLinkedList {
 
             if(oldNode == null) {
                 previousNode.setNext(node);
+                node.setPrevious(previousNode);
                 this.tail = node;
-                linkingTailToHead();
                 this.size++;
 
                 return true;
@@ -49,24 +49,24 @@ public class CircularSimpleLinkedList {
 
             previousNode.setNext(node);
             node.setNext(oldNode);
+            node.setPrevious(previousNode);
+            oldNode.setPrevious(node);
 
-            linkingTailToHead();
             this.size++;
-
             return true;
         }
         return false;
     }
 
     public void add(int value) {
-        Node node = new Node(value);
+        Node node = new Node(value, null);
         if(this.size == 0) {
             this.head = node;
         } else {
             this.tail.setNext(node);
+            node.setPrevious(this.tail);
         }
         this.tail = node;
-        linkingTailToHead();
         this.size++;
     }
 
@@ -74,9 +74,9 @@ public class CircularSimpleLinkedList {
         if(index == 0) {
             Node nextNode = getNode(1);
             this.head.setNext(null);
+            nextNode.setPrevious(null);
             this.head = nextNode;
 
-            linkingTailToHead();
             this.size--;
             return true;
         }
@@ -86,22 +86,19 @@ public class CircularSimpleLinkedList {
         Node nextNode = getNode(index + 1);
 
         previousNode.setNext(nextNode);
+        nextNode.setPrevious(previousNode);
 
         nodeToRemove.setNext(null);
+        nodeToRemove.setPrevious(null);
 
-        linkingTailToHead();
         size--;
         return true;
-    }
-
-    private void linkingTailToHead() {
-        this.tail.setNext(this.head);
     }
 
     public Node getNode(int index) {
         Node node = this.head;
         for(int i = 0; i < index; i++) {
-            if (node.getNext() == null || node.getNext() == this.head) {
+            if (node.getNext() == null) {
                 return null;
             }
             node = node.getNext();

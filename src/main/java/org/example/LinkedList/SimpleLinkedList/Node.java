@@ -1,4 +1,4 @@
-package org.example.ED.LinkedList.CircularSimpleLinkedList;
+package org.example.LinkedList.SimpleLinkedList;
 
 public class Node {
     private int value;
@@ -33,5 +33,4 @@ public class Node {
                 ", " + nextNodeStr +
                 '}';
     }
-
 }

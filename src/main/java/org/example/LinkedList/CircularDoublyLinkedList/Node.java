@@ -1,13 +1,13 @@
-package org.example.ED.LinkedList.DoublyLinkedList;
+package org.example.LinkedList.CircularDoublyLinkedList;
 
 public class Node {
     private int value;
     private Node next;
     private Node previous;
 
-    public Node(int object, Node next) {
+    public Node(int object) {
         this.value = object;
-        this.next = next;
+        this.next = null;
     }
 
     public int getValue() {

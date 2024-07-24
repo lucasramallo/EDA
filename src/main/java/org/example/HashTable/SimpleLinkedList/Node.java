@@ -1,19 +1,21 @@
-package org.example.ED.LinkedList.SimpleLinkedList;
+package org.example.HashTable.SimpleLinkedList;
+
+import org.example.HashTable.Aluno;
 
 public class Node {
-    private int value;
+    private Aluno value;
     private Node next;
 
-    public Node(int object) {
+    public Node(Aluno object) {
         this.value = object;
         this.next = null;
     }
 
-    public int getValue() {
+    public Aluno getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(Aluno value) {
         this.value = value;
     }
 

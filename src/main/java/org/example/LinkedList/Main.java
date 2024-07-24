@@ -1,9 +1,9 @@
-package org.example.ED.LinkedList;
+package org.example.LinkedList;
 
-import org.example.ED.LinkedList.CircularDoublyLinkedList.CircularDoublyLinkedList;
-import org.example.ED.LinkedList.CircularSimpleLinkedList.CircularSimpleLinkedList;
-import org.example.ED.LinkedList.DoublyLinkedList.DoublyLinkedList;
-import org.example.ED.LinkedList.SimpleLinkedList.SimpleLinkedList;
+import org.example.LinkedList.CircularDoublyLinkedList.CircularDoublyLinkedList;
+import org.example.LinkedList.CircularSimpleLinkedList.CircularSimpleLinkedList;
+import org.example.LinkedList.DoublyLinkedList.DoublyLinkedList;
+import org.example.LinkedList.SimpleLinkedList.SimpleLinkedList;
 
 public class Main {
     public static void main(String[] args) {
