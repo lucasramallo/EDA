@@ -19,13 +19,42 @@ public class HashTable {
         }
     }
 
-    public boolean add(Aluno aluno) {
-        int hashedIndex = keyToHash(aluno.getMatricula());
+    public boolean add(int key, Aluno value) {
+        int hashedIndex = keyToHash(key);
         SimpleLinkedList linkedList = new SimpleLinkedList();
 
-        list[hashedIndex].add(aluno);
+        list[hashedIndex].add(value);
 
         return true;
+    }
+
+    public String get(int matricula) {
+        int hashedIndex = keyToHash(matricula);
+        SimpleLinkedList column = list[hashedIndex];
+
+        for(int i = 0; i < column.size(); i++) {
+            Aluno aluno = column.get(i);
+            if(aluno.getMatricula() == matricula) {
+                return aluno.getNome();
+            }
+        }
+
+        throw new RuntimeException("Valor não encontrado!");
+    }
+
+    public String remove(int matricula) {
+        int hashedIndex = keyToHash(matricula);
+        SimpleLinkedList column = list[hashedIndex];
+
+        for(int i = 0; i < column.size(); i++) {
+            Aluno aluno = column.get(i);
+            if(aluno.getMatricula() == matricula) {
+                column.remove(i);
+                return aluno.getNome();
+            }
+        }
+
+        throw new RuntimeException("Valor não encontrado!");
     }
 
     private int keyToHash(int key) {
